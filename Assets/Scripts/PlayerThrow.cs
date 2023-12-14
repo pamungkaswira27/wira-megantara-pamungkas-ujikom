@@ -22,6 +22,7 @@ public class PlayerThrow : MonoBehaviour
 
     private void ThrowFood()
     {
+        AudioManager.Instance.PlayThrowSFX();
         Instantiate(_foodPrefab, _throwPoint.position, Quaternion.identity);
     }
 }
