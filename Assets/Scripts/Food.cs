@@ -19,6 +19,15 @@ public class Food : MonoBehaviour
         MoveFood();
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.TryGetComponent(out Animal animal))
+        {
+            animal.FeedAnimal(_hungerValue);
+            Destroy(gameObject);
+        }
+    }
+
     private void MoveFood()
     {
         transform.position += _speed * Time.deltaTime * Vector3.forward;

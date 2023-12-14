@@ -9,9 +9,27 @@ public class Animal : MonoBehaviour
     [SerializeField]
     private float _speed;
 
+    private int _currentHungerNeed;
+
+    private void Start()
+    {
+        _currentHungerNeed = 0;
+    }
+
     private void Update()
     {
         MoveAnimal();
+    }
+
+    public void FeedAnimal(int hungerValue)
+    {
+        _currentHungerNeed += hungerValue;
+
+        if (_currentHungerNeed >= _hungerNeed)
+        {
+            _currentHungerNeed = _hungerNeed;
+            Destroy(gameObject);
+        }
     }
 
     private void MoveAnimal()
