@@ -16,6 +16,6 @@ public class Animal : MonoBehaviour
 
     private void MoveAnimal()
     {
-        transform.position += _speed * Time.deltaTime * Vector3.forward;
+        transform.position += _speed * Time.deltaTime * transform.forward;
     }
 }
