@@ -21,6 +21,14 @@ public class Animal : MonoBehaviour
         MoveAnimal();
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Boundary"))
+        {
+            Destroy(gameObject);
+        }
+    }
+
     public void FeedAnimal(int hungerValue)
     {
         _currentHungerNeed += hungerValue;
