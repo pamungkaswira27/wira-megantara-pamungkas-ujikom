@@ -36,6 +36,7 @@ public class Animal : MonoBehaviour
         if (_currentHungerNeed >= _hungerNeed)
         {
             _currentHungerNeed = _hungerNeed;
+            GameManager.Instance.AddScore(_scorePoint);
             Destroy(gameObject);
         }
     }
