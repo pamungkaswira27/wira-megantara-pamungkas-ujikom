@@ -16,6 +16,11 @@ public class AnimalSpawner : MonoBehaviour
 
     private void SpawnAnimal()
     {
+        if (GameManager.Instance.IsGameOver)
+        {
+            return;
+        }
+
         int animalRandomIndex = Random.Range(0, _animalPrefabs.Length);
         int spawnPointRandomIndex = Random.Range(0, _spawnPoints.Length);
 
