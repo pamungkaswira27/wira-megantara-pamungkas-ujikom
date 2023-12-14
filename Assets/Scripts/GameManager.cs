@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     private bool _isGameOver;
 
     public bool IsGameOver => _isGameOver;
+    public float GameTime => _timerValue;
+    public int Score => _score;
 
     private void Awake()
     {
